@@ -1,12 +1,15 @@
 # Proposal:
 
-## Ideas:
+### Katie Truong, Rodrigo Gonzalez, Parul Dayal
 
-- How Democrats vs Republicans spend money?
+## Idea: Analyze healthcare spending  
 
-- How much money has spent on healthcare pre and post ObamaCare?
+1. How/and how much each state spends their healthcare money overtime.
 
-- Border control, pre and post Trump?
+2. Predict spending in the next few years (time series).
+
+3. Classify different types of spending in each state.
+
 
 ## Tech stacks:
 
@@ -14,4 +17,7 @@
 
 - SQL
 
+- D3
+
 - Cluster
+
