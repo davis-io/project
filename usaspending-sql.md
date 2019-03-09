@@ -79,5 +79,5 @@ CREATE TABLE `recipient` (
 ```
 SELECT * FROM `transaction` INNER JOIN recipient ON `transaction`.id = recipient.id 
   WHERE (`transaction`.awarding_agency_id = 68 OR `transaction`.funding_agency_id = 68)
-    AND recipient.state = 'CA'
+    AND recipient.state = 'CA';
 ```
