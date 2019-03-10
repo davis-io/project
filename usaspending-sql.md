@@ -81,3 +81,6 @@ SELECT * FROM `transaction` INNER JOIN recipient ON `transaction`.id = recipient
   WHERE (`transaction`.awarding_agency_id = 68 OR `transaction`.funding_agency_id = 68)
     AND recipient.state = 'CA';
 ```
+
+## TODO:
+- Create index on sqlite db
