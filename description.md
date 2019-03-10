@@ -1,5 +1,5 @@
 
-### IDEA 1: Inside CA, only 77% of the transactions report the county location. First, we try to find regularities in the data including socioceconomic factors. Are richer counties transactions different from poorer countries? How long between action date and last\_modified\_date? Different types of contracts? Create a CA map with different counties summarizing what we found.
+### IDEA 1: Inside CA, only 77% of the transactions report the county location. First, we try to find regularities in the data including socioceconomic factors. Are richer/older counties spend money differently than poorer/younger counties? How long between action date and last\_modified\_date? Different types of contracts? Create a CA map with different counties summarizing what we found.
 
 ### IDEA 2: If I tell you the description of the transaction, type of contract and so on ... are you able to predict the county where it is supposed to be located? Can we build a good classifier?
 
