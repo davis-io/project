@@ -1,3 +1,5 @@
+## NOTE: His database has an error (inconsistent type on `transaction.recipient_id` and `recipient.id`. If he can fix it, data retrivial would be really fast with indexing. Else we can do it your way.
+
 ## `transaction` schema
 
 ```
@@ -29,7 +31,7 @@ CREATE TABLE `transaction` (
   `awarding_agency_id` INTEGER,
   `funding_agency_id` INTEGER,
   `place_of_performance_id` REAL,
-  *`recipient_id` REAL*,
+  `recipient_id` REAL,
   `original_loan_subsidy_cost` REAL,
   `face_value_loan_guarantee` REAL,
   `funding_amount` REAL,
@@ -58,7 +60,7 @@ CREATE TABLE `agency` (
 
 ```
 CREATE TABLE `recipient` (
-  *`id` INTEGER*,
+  `id` INTEGER,
   `recipient_hash` TEXT,
   `legal_business_name` TEXT,
   `duns` TEXT,
@@ -75,6 +77,20 @@ CREATE TABLE `recipient` (
   `zip5` TEXT
 );
 ```
+## Create indexes:
+
+```
+.open usaspending.sqlite
+
+UPDATE `transaction` SET recipient_id_int = CAST(recipient_id AS INTEGER);
+CREATE INDEX awarding_agency_ID ON `transaction` (awarding_agency_id);
+CREATE INDEX funding_agency_ID ON `transaction` (funding_agency_id);
+CREATE INDEX state ON recipient (state);
+CREATE INDEX city ON recipient (city);
+CREATE INDEX idx on `transaction` (recipient_id);
+CREATE INDEX idxx on recipient (id);
+```
+
 ## Extracting HHS data of California:
 ```
 SELECT * FROM `transaction` INNER JOIN recipient ON `transaction`.recipent_id = recipient.id 
@@ -82,5 +98,4 @@ SELECT * FROM `transaction` INNER JOIN recipient ON `transaction`.recipent_id = 
     AND recipient.state = 'CA';
 ```
 
-## TODO:
-- Create index on sqlite db
+
