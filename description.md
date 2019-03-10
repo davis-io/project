@@ -16,7 +16,7 @@ Then in R:
 library(data.table)
 
 hhs = fread("hhs.csv")
-hhs_ca = hhs[hhs$recipient_location_state_code == "CA"]
+hhs_ca = hhs[hhs$V36 == "CA"]
 write.csv(hhs_ca, "hhs_ca.csv")
 ```
 Cleaning the data
