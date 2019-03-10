@@ -29,7 +29,7 @@ CREATE TABLE `transaction` (
   `awarding_agency_id` INTEGER,
   `funding_agency_id` INTEGER,
   `place_of_performance_id` REAL,
-  `recipient_id` REAL,
+  *`recipient_id` REAL*,
   `original_loan_subsidy_cost` REAL,
   `face_value_loan_guarantee` REAL,
   `funding_amount` REAL,
@@ -58,7 +58,7 @@ CREATE TABLE `agency` (
 
 ```
 CREATE TABLE `recipient` (
-  `id` INTEGER,
+  *`id` INTEGER*,
   `recipient_hash` TEXT,
   `legal_business_name` TEXT,
   `duns` TEXT,
@@ -77,7 +77,7 @@ CREATE TABLE `recipient` (
 ```
 ## Extracting HHS data of California:
 ```
-SELECT * FROM `transaction` INNER JOIN recipient ON `transaction`.id = recipient.id 
+SELECT * FROM `transaction` INNER JOIN recipient ON `transaction`.recipent_id = recipient.id 
   WHERE (`transaction`.awarding_agency_id = 68 OR `transaction`.funding_agency_id = 68)
     AND recipient.state = 'CA';
 ```
