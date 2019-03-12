@@ -59,8 +59,8 @@ agg_map = aggregate(total_obligation ~ fiscal_year + county_fips, hhs_ca, median
 # join agg_map with shapefile of counties
 df_map = left_join(agg_map, counties, by = "county_fips")
 
-#only take one year here to make the graph (2014)
-df_map_2014 = df_map[df_map$fiscal_year == 2014 , ]
+#only take one year here to make the graph (2015)
+df_map_2015 = df_map[df_map$fiscal_year == 2015 , ]
 
 # map
 # it is not perfect and there may be errors. 
