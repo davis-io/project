@@ -17,7 +17,5 @@
 
 - SQL
 
-- D3
 
-- Cluster
 
