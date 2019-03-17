@@ -25,3 +25,5 @@ There is a positive, but weak correlation (0.24) between the population of a cou
 This may be because each (smaller) county would receive a base amount of award, which is not correlated to their population, and additional amount based on each unit of increasement in population. It also depends on the categories of the spending. We can investigate some categories in spending, to see which of them are more correlated to the population and the demographic of people living in that state.
 
 **a. Health Resources and Services Administration**
+
+
